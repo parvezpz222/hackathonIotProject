@@ -59,7 +59,7 @@ const App = () => {
     <div>
       <h1>
 
-Asset Monitering Dashboard 
+Asset Monitoring Dashboard 
 </h1>
 <LandingPage arrayOfMessages={groupedMessages}/>
     </div>
