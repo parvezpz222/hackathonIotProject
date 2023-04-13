@@ -1,18 +1,26 @@
 import React from "react";
 import Graph from "./Graph";
-const GraphContainer = ({ data }) => {
+const GraphContainer = ({ allGraphData }) => {
+  
+   const graphs=  Object.keys(allGraphData).filter((e)=>e!=="cardIP")
+   
   return (
 <div className="graphContainer">
-  <div className="graphitems">
-    Chassis-Temprature
-<Graph/>
-</div>
-<div  className="graphitems">
-<Graph/>
-</div>
-<div  className="graphitems">
-<Graph/>
-</div>
+    {
+        graphs.map((e)=>{
+            return (
+                <div className="graphitems">
+                    <h3>{e}</h3>
+                    <Graph data={allGraphData[e]}/>
+                </div>
+            )
+        })
+    }
+
+   
+
+
+
 </div>
   );
 };
