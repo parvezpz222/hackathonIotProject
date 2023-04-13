@@ -5,7 +5,7 @@ export default function LandingPage({ arrayOfMessages, data }) {
   const [loggedIn, setLogin] = useState(false);
 
   return (
-    <div class="container">
+    <div className="container">
   Landing page
       {loggedIn && (
         <div>
