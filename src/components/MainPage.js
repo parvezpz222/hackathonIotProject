@@ -16,7 +16,6 @@ useEffect(()=>{
   return (
     <div>
       <CardList setSelectedCard = {setSelectedCard} className="CardContainer" ips = {Object.keys(arrayOfMessages)}/>
-
       <div class="divider">
   <span class="text">Card Data Populated here</span>
 </div>

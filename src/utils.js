@@ -36,7 +36,7 @@ export const getFormatedChassisTimeSeriesValues = (data) =>{
         if(chassisTempValue.length){
             let ChassisValue= {}
             chassisTempValue?.forEach((e)=>{
-                ChassisValue[e["location"]] = e["temperature"]
+                ChassisValue[e["location"]] =  e["temperature"]
             })
          
             chassisTemp.push(ChassisValue)
@@ -54,7 +54,7 @@ export const getFormatedChassisTimeSeriesValues = (data) =>{
         if(fanState.length){
             let fanStatusValue= {}
             fanState?.forEach((e)=>{
-                fanStatusValue[e["location"]] = e["state"]
+                fanStatusValue[e["location"]] = e["state"] === "on" ? 100 : 50
             })
          
             fanStateA.push(fanStatusValue)
@@ -64,7 +64,7 @@ export const getFormatedChassisTimeSeriesValues = (data) =>{
         if(psuState.length){
             let psuStateVoltageValue= {}
             let psuStateCurrentValue= {}
-            fanState?.forEach((e)=>{
+            psuState?.forEach((e)=>{
                 psuStateVoltageValue[e["location"]] = e["voltage"]
                 psuStateCurrentValue[e["location"]] = e["current"]
             })
