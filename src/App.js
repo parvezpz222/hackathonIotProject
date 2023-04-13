@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import LandingPage from "./components/LandingPage";
+import {convertDataToTimeSeries} from './utils'
+
 import "./App.css"
 const App = () => {
   const [conn, setConn] = useState(null);
   const [log, setLog] = useState([]);
+  const [groupedMessages, setGoupedMessaged] = useState({})
 
   const appendLog = (item) => {
     if(item){
@@ -13,9 +16,12 @@ const App = () => {
         itemComing.body=  JSON.parse(itemComing?.body)
 
         // console.log(item)
-      const newLog = [...prevLog, itemComing];
+      const newLog = [...prevLog, itemComing.body];
+     const groupedMessages =  convertDataToTimeSeries(newLog)
+     setGoupedMessaged(groupedMessages)
       return newLog;
     });
+    
   }
   };
 
@@ -46,13 +52,13 @@ const App = () => {
     }
   }, []);
 
-  console.log(log);
+  // console.log(log);
   return (
     <div>
       
 this is the web page for iot
     
-<LandingPage arrayOfMessages={log}/>
+<LandingPage arrayOfMessages={groupedMessages}/>
     </div>
   );
 };
