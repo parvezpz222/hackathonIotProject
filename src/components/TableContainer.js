@@ -1,21 +1,24 @@
 import React from "react";
 import Table from "./Table";
 const TableContainer = ({ data }) => {
-
+    console.log(data);
   return (
 <div className="table-items">
     <div>
-        <Table data={[]} columns={[]}/>
+        Chassis Temp
+        <Table data={data?.chassisTemp}/>
     </div>
     <div  className="items">
-        <Table data={[]} columns={[]}/>
+      Module CPUTemp
+        <Table data={data?.testModuleCPUtemp}/>
     </div>
-    <div  className="items">
-        <Table data={[]} columns={[]}/>
+    {/* <div className="items">
+        Test Module FPGATemp
+        <Table data={[]}/>
     </div>
-    <div  className="items">
-        <Table data={[]} columns={[]}/>
-    </div>
+    {/* <div className="items">
+        <Table data={[]}/>
+    </div> */}
 </div>
   );
 };

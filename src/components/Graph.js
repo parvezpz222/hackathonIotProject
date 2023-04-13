@@ -19,9 +19,9 @@ const Graph = ({ data}) => {
         7:"#CBF40B", 
         8:"#CBF40B"
     }
-    const datac = [{x:1, y:34, z:54},{x:2, y:21, z: 90},{x:30, z:34, y:21}]
-   
-    const SampleDataObject = data && Object.keys(data[0])
+    //const datac = [{x:1, y:34, z:54},{x:2, y:21, z: 90},{x:30, z:34, y:21}]
+    //console.log(data, "finally data is here");
+    const SampleDataObject = data && Object.keys(data[0]);
   return (
     <div> 
         <LineChart width={800} height={400} data={data}>

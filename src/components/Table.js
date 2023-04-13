@@ -8,8 +8,14 @@ import BootstrapTable from 'react-bootstrap-table-next';
 //     title : "tooltip data"
 //   }];
 
-  const Table = ({data, columns}) =>{
-    return <BootstrapTable keyField='id' data={ data } columns={ columns } />
+  const Table = ({data}) =>{
+    const columns = Object.keys(data[0])?.map(el=>{
+      return {
+        dataField: el,
+        text : el
+      }
+    });
+    return <BootstrapTable keyField='id' data={ data } columns={columns} />
   }
 
   export default Table;
