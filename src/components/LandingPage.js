@@ -6,10 +6,10 @@ export default function LandingPage({ arrayOfMessages, data }) {
 
   return (
     <div className="container">
-  Landing page
+<h3> chassis</h3>
       {loggedIn && (
         <div>
-          <button onClick={() => setLogin(false)}>Logout</button>
+          <button className="Logoutbutton" onClick={() => setLogin(false)}>Logout</button>
           <MainPage data={data} arrayOfMessages={arrayOfMessages} />
         </div>
       )}

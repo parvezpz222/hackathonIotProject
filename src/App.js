@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import LandingPage from "./components/LandingPage";
 import {convertDataToTimeSeries} from './utils'
-
+import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.min.css';
 import "./App.css"
 const App = () => {
   const [conn, setConn] = useState(null);
@@ -55,9 +57,10 @@ const App = () => {
   // console.log(log);
   return (
     <div>
-      
-this is the web page for iot
-    
+      <h1>
+
+Asset Monitering Dashboard 
+</h1>
 <LandingPage arrayOfMessages={groupedMessages}/>
     </div>
   );
